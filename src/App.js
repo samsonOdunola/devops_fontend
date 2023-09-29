@@ -11,11 +11,12 @@ function App() {
     axios
       .get("http://localhost:5000/api/products")
       .then((res) => {
+        console.log(res);
         console.log(res.data.data);
         setAllProducts(res.data.data);
         setIsLoading(false);
       })
-      .catch((err) => console.log(err));
+      .catch((err) => console.log(err.message));
   }, []);
 
   return (
